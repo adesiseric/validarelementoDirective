@@ -4,13 +4,13 @@ validarelementoDirective
 ## Install
 
 ```shell
-sudo npm install
+$ sudo npm install
 ```
 
 ```shell
-bower install
+$ bower install
 ```
 
 ```shell
-grunt
+$ grunt
 ```
