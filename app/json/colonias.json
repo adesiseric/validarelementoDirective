@@ -1,0 +1,110 @@
+[
+  {
+    "estado": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "09"
+    },
+    "barrio": {
+      "descripcion": "COL LOMAS DE CHAPULT",
+      "codigoInterno": "2926"
+    },
+    "ciudad": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "01"
+    },
+    "municipio": {
+      "descripcion": "MIGUEL HIDALGO",
+      "codigoInterno": "016"
+    }
+  },
+  {
+    "estado": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "09"
+    },
+    "barrio": {
+      "descripcion": "BARR LA CONSEPCION",
+      "codigoInterno": "2965"
+    },
+    "ciudad": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "01"
+    },
+    "municipio": {
+      "descripcion": "MILPA ALTA",
+      "codigoInterno": "009"
+    }
+  },
+  {
+    "estado": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "09"
+    },
+    "barrio": {
+      "descripcion": "AMPL DEL PORVENIR",
+      "codigoInterno": "2731"
+    },
+    "ciudad": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "01"
+    },
+    "municipio": {
+      "descripcion": "LA MAGDALENA CONTRERAS",
+      "codigoInterno": "008"
+    }
+  },
+  {
+    "estado": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "09"
+    },
+    "barrio": {
+      "descripcion": "BARR LA ASUNCION",
+      "codigoInterno": "3124"
+    },
+    "ciudad": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "01"
+    },
+    "municipio": {
+      "descripcion": "TLÁHUAC",
+      "codigoInterno": "011"
+    }
+  },
+  {
+    "estado": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "09"
+    },
+    "barrio": {
+      "descripcion": "COL TLALPAN",
+      "codigoInterno": "9537"
+    },
+    "ciudad": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "01"
+    },
+    "municipio": {
+      "descripcion": "TLALPAN",
+      "codigoInterno": "012"
+    }
+  },
+  {
+    "estado": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "09"
+    },
+    "barrio": {
+      "descripcion": "ATLAMAXAC",
+      "codigoInterno": "2859"
+    },
+    "ciudad": {
+      "descripcion": "DISTRITO FEDERAL",
+      "codigoInterno": "01"
+    },
+    "municipio": {
+      "descripcion": "VENUSTIANO CARRANZA",
+      "codigoInterno": "017"
+    }
+  }
+]

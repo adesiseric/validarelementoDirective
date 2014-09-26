@@ -1,0 +1,11 @@
+div.validarElementoDirective
+    div(
+        ng-form
+        name="formularioActual"
+    )
+        div.popover.top.error(ng-show="showCondition == 'true' && mouseIn")
+            div.arrow
+            h3.popover-title Error
+            div.popover-content
+                p {{msg}}
+        div(ng-transclude)

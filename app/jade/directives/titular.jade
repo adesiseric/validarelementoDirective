@@ -1,0 +1,61 @@
+form(
+    name="titularForm",
+    novalidate
+)
+    div.row
+        div.form-group.col-sm-4
+            label
+                | Nombre(s)
+            div(
+                validarelemento,
+                error-msg = "Nombre solo puede contener letras y espacios."
+            )
+                input.form-control(
+                    name="nombre",
+                    required,
+                    ng-model="titular.nombre",
+                    ng-pattern="reg.letter"
+                )
+        div.form-group.col-sm-4
+            label
+                | Primer apellido
+            div(
+                validarelemento,
+                error-msg = "Apellido solo puede contener letras y espacios."
+            )
+                input.form-control(
+                    name="apellidoPaterno",
+                    required,
+                    ng-model="titular.apellidoPaterno",
+                    ng-pattern="reg.letter"
+                )
+        div.form-group.col-sm-4
+            label
+                | Segundo apellido
+            div(
+                validarelemento,
+                error-msg = "Apellido solo puede contener letras y espacios."
+            )
+                input.form-control(
+                    name="apellidoMaterno",
+                    required,
+                    ng-model="titular.apellidoMaterno",
+                    ng-pattern="reg.letter"
+                )
+
+    div.row
+        div.form-group.col-sm-4
+            label
+                | Género
+            div(
+                validarelemento,
+                error-msg = "Debe seleccionar un género."
+            )
+                select.form-control(
+                    name="genero",
+                    required,
+                    ng-model="titular.sexo"
+                )
+                    option(value="") -Seleccionar-
+                    option(value="HOMBRE") Hombre
+                    option(value="MUJER") Mujer
