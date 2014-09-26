@@ -1,12 +1,12 @@
 {
-  "name": "induccion-angularjs",
+  "name": "directiva-angularjs",
   "version": "0.0.1",
-  "description": "Guia de induccion para Angularjs",
+  "description": "Directia hecha con Angularjs",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Adesis",
+  "author": "Eric Maya",
   "license": "MIT",
   "devDependencies": {
     "grunt": "^0.4.5",
