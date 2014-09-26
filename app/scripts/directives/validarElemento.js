@@ -18,35 +18,36 @@
                     showConditionName = 'showCondition',
                     globo = element.find('.popover');
 
-                element.bind("mouseenter", function() {
-                    scope.$apply(function() {
+                element.bind("mouseenter", function () {
+                    scope.$apply(function () {
                         scope[mouseInName] = true;
                     });
                 });
 
-                element.bind("mouseleave", function() {
-                    scope.$apply(function() {
+                element.bind("mouseleave", function () {
+                    scope.$apply(function () {
                         scope[mouseInName] = false;
                     });
                 });
 
-                scope.$watch(formName+'.'+elementName+'.$dirty && '+formName+'.'+elementName+'.$invalid', function ( value ) {
-                    scope[showConditionName] = ''+value;
+                scope.$watch(formName + '.' + elementName + '.$dirty && ' + formName + '.' + elementName + '.$invalid',
+                function ( _value ) {
+                    scope[showConditionName] = '' + _value;
                 });
 
-                scope.$watch(mouseInName, posicionValidarElementoDirective(inputElement, globo));
+                scope.$watch(mouseInName, globePosition(inputElement, globo));
 
             }
         };
     }
 
-    function posicionValidarElementoDirective ( inputElement, globo ) {
+    function globePosition ( _inputElement, _globo ) {
         return function () {
 
-            var offset = inputElement.offset(),
+            var offset = _inputElement.offset(),
                 offsetTop = offset.top,
                 offsetLeft = offset.left,
-                offsetParentElement = inputElement.offsetParent(),
+                offsetParentElement = _inputElement.offsetParent(),
                 offsetParent,
                 alturaGlobo;
 
@@ -55,7 +56,7 @@
             }
 
             while ( offsetParentElement ) {
-                alturaGlobo = globo.outerHeight();
+                alturaGlobo = _globo.outerHeight();
 
                 if ( alturaGlobo === 0 ) {
                     alturaGlobo = 86;
@@ -73,11 +74,13 @@
 
             }
 
-            globo.css({
-                top: offsetTop,
-                left: offsetLeft,
-                width : inputElement.outerWidth()
-            });
+            _globo.css(
+                {
+                    top: offsetTop,
+                    left: offsetLeft,
+                    width : _inputElement.outerWidth()
+                }
+            );
         };
     }
 
