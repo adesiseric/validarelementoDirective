@@ -5,7 +5,38 @@
     padding-left: 50px;
 }
 
+
+// Clase para mostrar el globo de error de campo
 .popover.top.error {
     display: block;
     max-width: 500px;
+}
+
+// Clase para contener mas de un elemento en linea
+.contenedor-multiple {
+    display: table;
+    width  : 100%;
+    .contenedor {
+        display     : inline-block;
+        margin-right: 1%;
+        // ancho de los inputs para fechas
+        &.dia, &.homoclave {
+            width: 24%;
+        }
+        &.mes {
+            width: 44%;
+        }
+        &.anyo {
+            width       : 30%;
+            margin-right: 0;
+        }
+        // ancho de lso inputs para rfc
+        &.rfc {
+            width: 54%;
+        }
+        &.boton {
+            margin-right: 0;
+            width       : 20%;
+        }
+    }
 }

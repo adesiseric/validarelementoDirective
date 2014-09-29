@@ -5,8 +5,6 @@
 
         function setup () {
             console.log('Estamos en el controlador Init.');
-            $scope.reg = {};
-            $scope.reg.letter = /^([a-zA-Z\sÀÈÌÒÙàèìòùÁÉÍÓÚÝáéíóúýÂÊÎÔÛâêîôûÃÑÕãñõÄËÏÖÜäëïöüçÇßØøÅåÆæÞþÐð])+$/;
         }
 
         setup();
