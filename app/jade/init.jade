@@ -5,3 +5,37 @@ div(ng-controller="Init")
         titular,
         titular-beneficiario-preferente="true"
     )
+    br
+
+    div.row
+        div.col-sm-1
+            a.tooltips(
+                href="",
+                name="hola",
+                ng-model="hola",
+                tooltip,
+                tooltip-display="top",
+                tooltip-message="Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!"
+            ) Hola
+
+    //- form(
+    //-     name="pruebaForm",
+    //-     novalidate
+    //- )
+    //-     div.row
+    //-         div.form-group.col-sm-6
+    //-             label
+    //-                 | Algo
+    //-             input.form-control
+
+    //-         div.form-group.col-sm-1
+    //-             label
+    //-                 | &nbsp;
+    //-             a.tooltips(
+    //-             href="",
+    //-             name="hola",
+    //-             ng-model="hola",
+    //-             tooltip,
+    //-             tooltip-display="left",
+    //-             tooltip-message="Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!"
+    //-         ) Hola

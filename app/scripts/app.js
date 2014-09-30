@@ -22,6 +22,8 @@
         'elementValidationDirective',
         // Directiva para los datos del titular
         'datosTitularDirective',
+        // Directiva para el tooltip
+        'tooltipDirective',
         // Para el servicio de colonias
         'ColoniesHandling'
     ] )
