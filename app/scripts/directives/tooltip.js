@@ -28,10 +28,12 @@
                 });
 
                 element.bind('mouseleave', function () {
-                    tooltip.css({
-                        opacity: 0,
-                        filter: 'alpha(opacity=0)'
-                    });
+                    tooltip.css(
+                        {
+                            opacity: 0,
+                            filter: 'alpha(opacity=0)'
+                        }
+                    );
                 });
 
                 function setStyle () {
@@ -61,27 +63,29 @@
                         leftAttribute = -tooltipWidth;
                     }
 
-                    tooltip.css({
-                        opacity: 1,
-                        filter: 'alpha(opacity=1)',
-                        top: topAttribute,
-                        left: leftAttribute,
-                        'max-width': '100px',
-                        '-webkit-transition-property': 'all',
-                        '-webkit-transition-delay': '0.2s',
-                        '-moz-transition-property': 'all',
-                        '-moz-transition-delay': '0.2s',
-                        '-o-transition-property': 'all',
-                        '-o-transition-delay': '0.2s',
-                        'transition-property': 'all',
-                        'transition-delay': '0.2s'
-                    });
+                    tooltip.css(
+                        {
+                            opacity: 1,
+                            filter: 'alpha(opacity=1)',
+                            top: topAttribute,
+                            left: leftAttribute,
+                            'max-width': '100px',
+                            '-webkit-transition-property': 'all',
+                            '-webkit-transition-delay': '0.2s',
+                            '-moz-transition-property': 'all',
+                            '-moz-transition-delay': '0.2s',
+                            '-o-transition-property': 'all',
+                            '-o-transition-delay': '0.2s',
+                            'transition-property': 'all',
+                            'transition-delay': '0.2s'
+                        }
+                    );
                 }
             }
         };
     }
 
-    angular.module('tooltipDirective', [])
-    .directive('tooltip', Tooltip);
+    angular.module( 'tooltipDirective', [] )
+    .directive( 'tooltip', Tooltip );
 
 })();
