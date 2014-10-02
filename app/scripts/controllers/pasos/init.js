@@ -1,25 +1,12 @@
 (function () {
     'use strict';
 
-    function Init ( $scope ) {
+    function Init ( $scope, $http ) {
 
         function setup () {
             console.log('Estamos en el controlador Init.');
-            $scope.reg = {};
-            $scope.reg.letter = /^([a-zA-Z\sÀÈÌÒÙàèìòùÁÉÍÓÚÝáéíóúýÂÊÎÔÛâêîôûÃÑÕãñõÄËÏÖÜäëïöüçÇßØøÅåÆæÞþÐð])+$/;
-            $scope.model = {
-                titular: {
-                    nombre: null,
-                    apellidoPaterno: null,
-                    apellidoMaterno: null,
-                    sexo: null,
-                    rfc: null,
-                    email: null,
-                    telefono: null,
-                    telefono2: null,
-                    beneficiarioPreferente: null
-                }
-            };
+            includeRegExp();
+            incluirHtmlTooltip();
             assignGender();
         }
 
@@ -36,10 +23,36 @@
             console.log('Se llama al servicio para calcular el rfc.');
         };
 
+        function includeRegExp () {
+            $scope.reg = {};
+            $scope.reg.letter = /^([a-zA-Z\sÀÈÌÒÙàèìòùÁÉÍÓÚÝáéíóúýÂÊÎÔÛâêîôûÃÑÕãñõÄËÏÖÜäëïöüçÇßØøÅåÆæÞþÐð])+$/;
+            $scope.model = {
+                titular: {
+                    nombre: null,
+                    apellidoPaterno: null,
+                    apellidoMaterno: null,
+                    sexo: null,
+                    rfc: null,
+                    email: null,
+                    telefono: null,
+                    telefono2: null,
+                    beneficiarioPreferente: null
+                }
+            };
+        }
+
         function assignGender () {
             if ( ! $scope.model.titular.sexo ) {
                 $scope.model.titular.sexo = 'HOMBRE';
             }
+        }
+
+        function incluirHtmlTooltip () {
+            $http.get('/views/tooltips/mensajePrueba.html')
+            .success(function (data) {
+                console.log(data);
+                $scope.htmlTooltip = data;
+            });
         }
 
         setup();
@@ -47,6 +60,6 @@
     }
 
     angular.module( 'wibeApp' )
-    .controller( 'Init', ['$scope', Init] );
+    .controller( 'Init', ['$scope', '$http', Init] );
 
 })();

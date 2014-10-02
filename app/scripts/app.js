@@ -22,8 +22,8 @@
         'elementValidationDirective',
         // Directiva para los datos del titular
         'datosTitularDirective',
-        // Directiva para el tooltip
-        'tooltipDirective',
+        // Directiva de angular-bootstrap
+        'ui.bootstrap',
         // Para el servicio de colonias
         'ColoniesHandling'
     ] )

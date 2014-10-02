@@ -11,35 +11,22 @@ div(ng-controller="Init")
 
     +titular('true')
 
+    br
     div.row
         div.col-sm-1
-            a.tooltips(
+            a(
                 href="",
-                name="hola",
-                ng-model="hola",
-                tooltip,
-                tooltip-display="top",
-                tooltip-message="Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!"
-            ) Hola
-
-    //- form(
-    //-     name="pruebaForm",
-    //-     novalidate
-    //- )
-    //-     div.row
-    //-         div.form-group.col-sm-6
-    //-             label
-    //-                 | Algo
-    //-             input.form-control
-
-    //-         div.form-group.col-sm-1
-    //-             label
-    //-                 | &nbsp;
-    //-             a.tooltips(
-    //-             href="",
-    //-             name="hola",
-    //-             ng-model="hola",
-    //-             tooltip,
-    //-             tooltip-display="left",
-    //-             tooltip-message="Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!"
-    //-         ) Hola
+                name="top",
+                ng-model="top",
+                tooltip="On the Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!Tooltip!",
+                tooltip-placement="top"
+            ) Top
+        div.col-sm-6
+            div.col-sm-1
+            a(
+                href="",
+                name="html",
+                ng-model="html",
+                tooltip-html-unsafe="{{htmlTooltip}}",
+                tooltip-placement="right"
+            ) htmlTooltip
