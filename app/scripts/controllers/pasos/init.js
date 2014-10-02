@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    function Init ( $scope, $http ) {
+    function Init ( $scope, $http, Tooltip ) {
 
         function setup () {
             console.log('Estamos en el controlador Init.');
@@ -48,10 +48,16 @@
         }
 
         function incluirHtmlTooltip () {
-            $http.get('/views/tooltips/mensajePrueba.html')
+            Tooltip.getTemplate('prueba')
             .success(function (data) {
-                console.log(data);
-                $scope.htmlTooltip = data;
+                if ( data ) {
+                    $scope.htmlTooltip = data;
+                } else {
+                    $scope.htmlTooltip = null;
+                }
+            })
+            .error(function (data) {
+                $scope.htmlTooltip = null;
             });
         }
 
@@ -60,6 +66,6 @@
     }
 
     angular.module( 'wibeApp' )
-    .controller( 'Init', ['$scope', '$http', Init] );
+    .controller( 'Init', ['$scope', '$http', 'Tooltip', Init] );
 
 })();

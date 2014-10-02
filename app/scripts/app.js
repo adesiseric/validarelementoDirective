@@ -25,7 +25,9 @@
         // Directiva de angular-bootstrap
         'ui.bootstrap',
         // Para el servicio de colonias
-        'ColoniesHandling'
+        'ColoniesHandling',
+        // Servicio para tooltip Templates
+        'tooltipTemplatesHandling'
     ] )
     .config( ['$routeProvider', config] );
 
