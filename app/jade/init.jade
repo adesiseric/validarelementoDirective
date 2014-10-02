@@ -1,11 +1,15 @@
+include partials/titular
 div(ng-controller="Init")
     h3.page-header Titular asegurado
 
-    div(
-        titular,
-        titular-beneficiario-preferente="true"
-    )
-    br
+    //- div(
+    //-     titular,
+    //-     titular-beneficiario-preferente="true"
+    //- )
+    //- br
+
+
+    +titular('true')
 
     div.row
         div.col-sm-1

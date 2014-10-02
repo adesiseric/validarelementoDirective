@@ -1,0 +1,201 @@
+mixin titular (beneficiarioPreferente)
+    form(
+        name="titularForm",
+        novalidate
+    )
+        div.row
+            div.form-group.col-sm-4
+                label
+                    | Nombre(s)
+                div(
+                    validarelemento,
+                    error-msg = "Nombre solo puede contener letras y espacios."
+                )
+                    input.form-control(
+                        name="nombre",
+                        required,
+                        ng-model="model.titular.nombre",
+                        ng-pattern="reg.letter"
+                    )
+            div.form-group.col-sm-4
+                label
+                    | Primer apellido
+                div(
+                    validarelemento,
+                    error-msg = "Apellido solo puede contener letras y espacios."
+                )
+                    input.form-control(
+                        name="apellidoPaterno",
+                        required,
+                        ng-model="model.titular.apellidoPaterno",
+                        ng-pattern="reg.letter"
+                    )
+            div.form-group.col-sm-4
+                label
+                    | Segundo apellido
+                div(
+                    validarelemento,
+                    error-msg = "Apellido solo puede contener letras y espacios."
+                )
+                    input.form-control(
+                        name="apellidoMaterno",
+                        required,
+                        ng-model="model.titular.apellidoMaterno",
+                        ng-pattern="reg.letter"
+                    )
+
+        div.row
+            div.form-group.col-sm-4
+                label
+                    | Género
+                div(
+                    validarelemento,
+                    error-msg = "Debe seleccionar un género."
+                )
+                    select.form-control(
+                        name="genero",
+                        required,
+                        ng-model="model.titular.sexo"
+                    )
+                        option(value="HOMBRE") Hombre
+                        option(value="MUJER") Mujer
+
+            div.form-group.col-sm-4
+                label
+                    | Fecha de nacimiento
+                div.contenedor-multiple
+                    div.contenedor.dia
+                        div(
+                            validarelemento,
+                            error-msg="Selecciona día."
+                        )
+                            select.form-control(
+                                name="day",
+                                required,
+                                ng-model="day"
+                            )
+                                option(value="") Día
+                                option(value="1") 1
+                                option(value="2") 2
+                                option(value="3") 3
+                                option(value="4") 4
+                                option(value="5") 5
+                    div.contenedor.mes
+                        div(
+                            validarelemento,
+                            error-msg="Selecciona mes."
+                        )
+                            select.form-control(
+                                name="month",
+                                required,
+                                ng-model="month"
+                            )
+                                option(value="") Mes
+                                option(value="Enero") Enero
+                                option(value="Febrero") Febrero
+                                option(value="Marzo") Marzo
+                                option(value="Marzo") Noviembre
+                    div.contenedor.anyo
+                        div(
+                            validarelemento,
+                            error-msg="Selecciona año."
+                        )
+                            select.form-control(
+                                name="year",
+                                required,
+                                ng-model="year"
+                            )
+                                option(value="") Año
+                                option(value="2014") 2014
+                                option(value="2015") 2015
+                                option(value="2016") 2016
+
+            div.form-group.col-sm-4
+                label
+                    | RFC
+                div.contenedor-multiple
+                    div.contenedor.rfc
+                        input.form-control(
+                            name="rfc",
+                            required,
+                            disabled,
+                            ng-model="model.titular.rfc"
+                        )
+                    div.contenedor.homoclave
+                        input.form-control(
+                            name="homoclave",
+                            ng-model="model.titular.homoclave"
+                        )
+                    div.contenedor.boton
+                        button.btn.btn-primary(ng-click="calcularRFC()") Calcular
+
+        div.row
+            div.form-group.col-sm-4
+                label
+                    | Email
+                div(
+                    validarelemento,
+                    error-msg = "Coloca un email válido."
+                )
+                    input.form-control(
+                        name="email",
+                        required,
+                        ng-model="model.titular.email"
+                    )
+
+            div.form-group.col-sm-4
+                label
+                    | Teléfono 1
+                div(
+                    validarelemento,
+                    error-msg = "El télefono debe ser de 10 dígitos."
+                )
+                    input.form-control(
+                        name="telefono1",
+                        required,
+                        ng-model="model.titular.telefono"
+                    )
+
+            div.form-group.col-sm-4
+                label
+                    | Teléfono 2
+                em.text-muted
+                        | &nbsp;*opcional
+                div(
+                    validarelemento,
+                    error-msg = "El télefono debe ser de 10 dígitos."
+                )
+                    input.form-control(
+                        name="telefono2",
+                        required,
+                        ng-model="model.titular.telefono2"
+                    )
+
+        div.row(ng-if=beneficiarioPreferente)
+            div.form-group.col-sm-8
+                div.btn-group
+                    button.btn.btn-lg(
+                        ng-class="{'btn-primary': !showPreferredBeneficiary, 'btn-default': showPreferredBeneficiary}",
+                        ng-click="togglePreferredBeneficiary()"
+                    ) No requiere beneficiario preferente
+                    button.btn.btn-lg(
+                        ng-class="{'btn-primary': showPreferredBeneficiary, 'btn-default': !showPreferredBeneficiary}",
+                        ng-click="togglePreferredBeneficiary('show')"
+                    ) Requiere beneficiario preferente
+            div.form-group.col-sm-4
+                label
+                    em.text-muted i
+
+            div.form-group.col-sm-8(ng-show="showPreferredBeneficiary")
+                label
+                    | Beneficiario preferente (nombre completo)
+                div(
+                    validarelemento,
+                    error-msg = "El beneficiario preferente solo puede contener letras y espacios."
+                )
+                    input.form-control(
+                        name="beneficiarioPreferente",
+                        required,
+                        ng-model="model.titular.beneficiarioPreferente",
+                        ng-pattern="reg.letter"
+                    )
