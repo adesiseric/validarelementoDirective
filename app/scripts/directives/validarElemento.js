@@ -55,24 +55,15 @@
                 offsetParentElement = null;
             }
 
-            while ( offsetParentElement ) {
-                alturaGlobo = _globo.outerHeight();
+            alturaGlobo = _globo.outerHeight();
 
-                if ( alturaGlobo === 0 ) {
-                    alturaGlobo = 86;
-                }
-
-                offsetParent = offsetParentElement.offset();
-                offsetTop = offsetTop - offsetParent.top - alturaGlobo;
-                offsetLeft = offsetLeft - offsetParent.left;
-
-                offsetParentElement = offsetParentElement.offsetParent();
-
-                if ( offsetParentElement.is('body') || offsetParentElement.is('html') ) {
-                    offsetParentElement = null;
-                }
-
+            if ( alturaGlobo === 0 ) {
+                alturaGlobo = 85;
             }
+
+            offsetParent = offsetParentElement.offset();
+            offsetTop = offsetTop - offsetParent.top - alturaGlobo;
+            offsetLeft = offsetLeft - offsetParent.left;
 
             _globo.css(
                 {
